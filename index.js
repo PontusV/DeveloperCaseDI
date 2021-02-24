@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     const rawFeed = await getRSSFeed();
     const feed = parseRSSFeed(rawFeed);
     const htmlContent = generateHTMLFromRSS(feed);
-    res.render("index", { news: [1, 2, 3, 4, 5], content: htmlContent });
+    res.render("index", { content: htmlContent });
 });
 
 app.use("/", router);
